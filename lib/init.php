@@ -4,7 +4,7 @@ require_once(ROOT.DS."config".DS."config.php");
 
 function __autoload($classname)
 {
-    $lib_path = ROOT.DS."lib".DS.strtolower($classname)."class.php";
+    $lib_path = ROOT.DS."lib".DS.strtolower($classname).".php";
     $controllers_path = ROOT.DS."controllers".DS.str_replace("controller", "", strtolower($classname))."controller.php";
     $model_path = ROOT.DS."models".DS.strtolower($classname).".php";
 
@@ -21,5 +21,4 @@ function __autoload($classname)
     {
         throw new Exception("Failed to include class: ".$classname);
     }
-
 }
